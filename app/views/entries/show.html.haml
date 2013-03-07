@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Playa:
+  = @entry.playa
+%p
+  %b White card:
+  = @entry.white_card
+%p
+  %b Black card:
+  = @entry.black_card
+%p
+  %b Wins:
+  = @entry.wins
+%p
+  %b Loses:
+  = @entry.loses
+%p
+  %b Draws:
+  = @entry.draws
+
+= link_to 'Edit', edit_entry_path(@entry)
+\|
+= link_to 'Back', entries_path

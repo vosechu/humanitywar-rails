@@ -1,0 +1,29 @@
+%h1 Listing entries
+
+%table
+  %tr
+    %th Playa
+    %th White card
+    %th Black card
+    %th Wins
+    %th Loses
+    %th Draws
+    %th
+    %th
+    %th
+
+  - @entries.each do |entry|
+    %tr
+      %td= entry.playa
+      %td= entry.white_card
+      %td= entry.black_card
+      %td= entry.wins
+      %td= entry.loses
+      %td= entry.draws
+      %td= link_to 'Show', entry
+      %td= link_to 'Edit', edit_entry_path(entry)
+      %td= link_to 'Destroy', entry, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Entry', new_entry_path

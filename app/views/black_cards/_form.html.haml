@@ -1,0 +1,16 @@
+= form_for @black_card do |f|
+  - if @black_card.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@black_card.errors.count, "error")} prohibited this black_card from being saved:"
+      %ul
+        - @black_card.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :text
+    = f.text_field :text
+  .field
+    = f.label :blanks
+    = f.number_field :blanks
+  .actions
+    = f.submit 'Save'

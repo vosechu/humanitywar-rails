@@ -1,0 +1,21 @@
+%h1 Listing black_cards
+
+%table
+  %tr
+    %th Text
+    %th Blanks
+    %th
+    %th
+    %th
+
+  - @black_cards.each do |black_card|
+    %tr
+      %td= black_card.text
+      %td= black_card.blanks
+      %td= link_to 'Show', black_card
+      %td= link_to 'Edit', edit_black_card_path(black_card)
+      %td= link_to 'Destroy', black_card, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Black card', new_black_card_path

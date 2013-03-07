@@ -1,0 +1,13 @@
+= form_for @playa do |f|
+  - if @playa.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@playa.errors.count, "error")} prohibited this playa from being saved:"
+      %ul
+        - @playa.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :email
+    = f.text_field :email
+  .actions
+    = f.submit 'Save'
