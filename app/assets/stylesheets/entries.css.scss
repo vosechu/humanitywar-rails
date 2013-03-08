@@ -1,14 +1,64 @@
 // Place all the styles related to the Entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.left {
-  float: left;
-  width: 400px;
+body {
+  font-family: 'Helvetica Neue', Helvetica;
+  font-variant: light;
 }
-.right {
+.wrapper {
+  margin: 0 auto;
+  width: 1300px;
+}
+.vs {
   float: left;
-  width: 400px;
+  margin: 30px;
+  font-weight: bold;
+  font-size: 2em;
+}
+.entry {
+  float: left;
+}
+.white-card, .black-card {
+  position: relative;
+  float: left;
+
+  width: 220px;
+  height: 320px;
+  border-radius: 12px;
+
+  padding: 24px;
+  margin: 6px;
+
+  font-weight: bold;
+  font-size: 1.3em;
+
+  .icon {
+    display: block;
+    position: absolute;
+    bottom: -12px;
+
+    width: 250px;
+    height: 47px;
+
+    padding-left: 71px;
+    padding-top: 24px;
+
+    font-size: .6em;
+    vertical-align: baseline;
+  }
 }
 .white-card {
-  font-weight: bold;
+  color: black;
+  border: 1px solid black;
+  .icon {
+    background: transparent url('/assets/white-icon.png') no-repeat;
+  }
+}
+.black-card {
+  color: white;
+  background-color: black;
+
+  .icon {
+    background: transparent url('/assets/black-icon.png') no-repeat;
+  }
 }

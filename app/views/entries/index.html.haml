@@ -1,13 +1,25 @@
-%h1 Fight!
+.wrapper
+  %h1 Cards Against Humanity War
 
-.left
-  .black-card
-    = @entries[0].black_card
-  .white-card
-    = @entries[0].white_card
+  .entry
+    .black-card
+      = @entries[0].black_card
+      .icon
+        Cards Against Humanity
+    .white-card
+      = @entries[0].white_card
+      .icon
+        Cards Against Humanity
 
-.right
-  .black-card
-    = @entries[1].black_card
-  .white-card
-    = @entries[1].white_card
+  .vs
+    VS!
+
+  .entry
+    .black-card
+      = @entries[1].black_card
+      .icon
+        Cards Against Humanity
+    .white-card
+      = @entries[1].white_card
+      .icon
+        Cards Against Humanity
