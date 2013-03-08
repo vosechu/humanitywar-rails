@@ -2,7 +2,11 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.not_multi
+    if params[:easy_mode] == 'true'
+      @entries = Entry.easy_game.not_multi
+    else
+      @entries = Entry.game.not_multi
+    end
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,25 +1,27 @@
 .wrapper
   %h1 Cards Against Humanity War
 
-  .entry
-    .black-card
-      = @entries[0].black_card
-      .icon
-        Cards Against Humanity
-    .white-card
-      = @entries[0].white_card
-      .icon
-        Cards Against Humanity
+  %a{href: '#'}
+    .entry
+      .black-card
+        = @entries[0].black_card
+        .icon
+          Cards Against Humanity
+      .white-card
+        = @entries[0].white_card
+        .icon
+          Cards Against Humanity
 
   .vs
     VS!
 
-  .entry
-    .black-card
-      = @entries[1].black_card
-      .icon
-        Cards Against Humanity
-    .white-card
-      = @entries[1].white_card
-      .icon
-        Cards Against Humanity
+  %a{href: '#'}
+    .entry
+      .black-card
+        = @entries[1].black_card
+        .icon
+          Cards Against Humanity
+      .white-card
+        = @entries[1].white_card
+        .icon
+          Cards Against Humanity
