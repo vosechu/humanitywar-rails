@@ -29,4 +29,7 @@
           .icon
             Cards Against Humanity
 
-  %a{href: '/?easy_mode=true', class: 'easy-mode'} Try out easy mode
+  - if !params[:easy_mode]
+    %a{href: '/?easy_mode=true', class: 'easy-mode'} Try out easy mode
+  - else
+    %a{href: '/', class: 'easy-mode'} Turn off easy mode
