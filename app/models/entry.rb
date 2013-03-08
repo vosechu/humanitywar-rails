@@ -10,7 +10,7 @@ class Entry < ActiveRecord::Base
   scope :not_multi, where("black_cards.blanks = 1")
 
   def self.easy_game
-    b = BlackCard.random.first
+    b = self.not_multi.game.first.black_card
     self.not_multi.game.where(:black_card_id => b.id)
   end
 end

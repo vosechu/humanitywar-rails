@@ -5,15 +5,24 @@ body {
   font-family: 'Helvetica Neue', Helvetica;
   font-variant: light;
 }
+a {
+  color: black;
+}
 .wrapper {
   margin: 0 auto;
   width: 1300px;
 }
 .vs {
   float: left;
+
   margin: 30px;
+
+  text-align: center;
   font-weight: bold;
   font-size: 2em;
+}
+.entries {
+  margin-bottom: 24px;
 }
 .entry {
   float: left;

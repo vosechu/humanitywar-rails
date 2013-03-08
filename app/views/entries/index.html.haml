@@ -1,27 +1,32 @@
 .wrapper
   %h1 Cards Against Humanity War
 
-  %a{href: '#'}
-    .entry
-      .black-card
-        = @entries[0].black_card
-        .icon
-          Cards Against Humanity
-      .white-card
-        = @entries[0].white_card
-        .icon
-          Cards Against Humanity
+  .entries.cf
+    %a{href: '#'}
+      .entry
+        .black-card
+          = @entries[0].black_card
+          .icon
+            Cards Against Humanity
+        .white-card
+          = @entries[0].white_card
+          .icon
+            Cards Against Humanity
 
-  .vs
-    VS!
+    .vs
+      VS!
+      %br
+      %a{href: ''} Reload
 
-  %a{href: '#'}
-    .entry
-      .black-card
-        = @entries[1].black_card
-        .icon
-          Cards Against Humanity
-      .white-card
-        = @entries[1].white_card
-        .icon
-          Cards Against Humanity
+    %a{href: '#'}
+      .entry
+        .black-card
+          = @entries[1].black_card
+          .icon
+            Cards Against Humanity
+        .white-card
+          = @entries[1].white_card
+          .icon
+            Cards Against Humanity
+
+  %a{href: '/?easy_mode=true', class: 'easy-mode'} Try out easy mode
