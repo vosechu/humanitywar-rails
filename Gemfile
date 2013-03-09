@@ -41,4 +41,7 @@ gem 'will_paginate', '~> 3.0'
 
 group :development, :test do
   gem 'rspec-rails'
+
+  gem 'autotest-standalone'
+  gem 'autotest-growl'
 end

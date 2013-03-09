@@ -26,6 +26,10 @@ a {
 }
 .entry {
   float: left;
+  &:hover {
+    border: 3px dashed green;
+    margin: -3px;
+  }
 }
 .white-card, .black-card {
   position: relative;

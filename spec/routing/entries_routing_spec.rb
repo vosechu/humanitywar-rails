@@ -2,6 +2,9 @@ require "spec_helper"
 
 describe EntriesController do
   describe "routing" do
+    it "routes #root to #index" do
+      get("/").should route_to("entries#index")
+    end
 
     it "routes to #index" do
       get("/entries").should route_to("entries#index")

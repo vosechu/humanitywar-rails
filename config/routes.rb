@@ -1,8 +1,6 @@
 HumanitywarRails::Application.routes.draw do
   resources :entries
   resources :playas
-  resources :black_cards
-  resources :white_cards
   root :to => 'entries#index'
 
   # The priority is based upon order of creation:

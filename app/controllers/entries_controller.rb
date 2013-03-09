@@ -3,9 +3,9 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     if params[:easy_mode] == 'true'
-      @entries = Entry.easy_game.not_multi
+      @entries = Entry.easy_game
     else
-      @entries = Entry.game.not_multi
+      @entries = Entry.game
     end
 
     respond_to do |format|

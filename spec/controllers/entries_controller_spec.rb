@@ -19,12 +19,19 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe EntriesController do
+  before(:each) do
+    @playa = Playa.create!(:email => "test@example.com")
+    @white_card = WhiteCard.create!(:text => "test white")
+    @black_card = BlackCard.create!(:text => "test black", :blanks => 1)
+  end
 
   # This should return the minimal set of attributes required to create a valid
   # Entry. As you add validations to Entry, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "playa" => "" }
+    { "playa_id" => @playa.id,
+      "white_card_id" => @white_card.id,
+      "black_card_id" => @black_card.id }
   end
 
   # This should return the minimal set of values that should be in the session
@@ -89,14 +96,14 @@ describe EntriesController do
       it "assigns a newly created but unsaved entry as @entry" do
         # Trigger the behavior that occurs when invalid params are submitted
         Entry.any_instance.stub(:save).and_return(false)
-        post :create, {:entry => { "playa" => "invalid value" }}, valid_session
+        post :create, {:entry => { "playa_id" => 42 }}, valid_session
         assigns(:entry).should be_a_new(Entry)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Entry.any_instance.stub(:save).and_return(false)
-        post :create, {:entry => { "playa" => "invalid value" }}, valid_session
+        post :create, {:entry => { "playa_id" => 42 }}, valid_session
         response.should render_template("new")
       end
     end
@@ -132,7 +139,7 @@ describe EntriesController do
         entry = Entry.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Entry.any_instance.stub(:save).and_return(false)
-        put :update, {:id => entry.to_param, :entry => { "playa" => "invalid value" }}, valid_session
+        put :update, {:id => entry.to_param, :entry => { "playa_id" => 42 }}, valid_session
         assigns(:entry).should eq(entry)
       end
 
@@ -140,7 +147,7 @@ describe EntriesController do
         entry = Entry.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Entry.any_instance.stub(:save).and_return(false)
-        put :update, {:id => entry.to_param, :entry => { "playa" => "invalid value" }}, valid_session
+        put :update, {:id => entry.to_param, :entry => { "playa_id" => 42 }}, valid_session
         response.should render_template("edit")
       end
     end
