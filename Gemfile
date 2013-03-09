@@ -44,4 +44,8 @@ group :development, :test do
 
   gem 'autotest-standalone'
   gem 'autotest-growl'
+
+  gem 'rack-livereload'
+  gem 'rb-fsevent'
+  gem 'guard-livereload'
 end
