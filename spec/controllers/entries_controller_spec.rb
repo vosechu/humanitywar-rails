@@ -59,34 +59,4 @@ describe EntriesController do
     end
   end
 
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested entry" do
-        entry = create_entry
-        # Assuming there are no other entries in the database, this
-        # specifies that the Entry created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Entry.any_instance.should_receive(:update_attributes).with({ "wins" => "1" })
-        put :update, {:id => entry.to_param, :entry => { "wins" => "1" }}, valid_session
-      end
-
-      it "assigns the requested entry as @entry" do
-        entry = create_entry
-        put :update, {:id => entry.to_param, :entry => { "wins" => "1" }}, valid_session
-        assigns(:entry).should eq(entry)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the entry as @entry" do
-        entry = create_entry
-        # Trigger the behavior that occurs when invalid params are submitted
-        Entry.any_instance.stub(:save).and_return(false)
-        put :update, {:id => entry.to_param, :entry => { "wins" => "" }}, valid_session
-        assigns(:entry).should eq(entry)
-      end
-    end
-  end
-
 end
