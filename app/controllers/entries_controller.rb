@@ -30,7 +30,16 @@ class EntriesController < ApplicationController
     Entry.find(params[:win_id]).increment!(:wins)
     Entry.find(params[:lose_id]).increment!(:loses)
     respond_to do |format|
-      format.json { head :ok }
+      format.json { render json: {} }
+    end
+  end
+
+  # PUT /entries/draw
+  def draw
+    Entry.find(params[:draw_ids][0]).increment!(:draws)
+    Entry.find(params[:draw_ids][1]).increment!(:draws)
+    respond_to do |format|
+      format.json { render json: {} }
     end
   end
 end

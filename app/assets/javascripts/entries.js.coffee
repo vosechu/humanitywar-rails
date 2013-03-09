@@ -4,6 +4,7 @@
 
 $ ->
   $('.entries a').on 'click', (e) ->
+    e.preventDefault()
     $target = $(e.currentTarget)
     $.ajax
       url: '/entries/win'
@@ -13,5 +14,15 @@ $ ->
         lose_id: $target.data('lose_id')
       success: (data) ->
         location.reload()
-      error: () ->
+  $('.refresh').on 'click', (e) ->
+    e.preventDefault()
+    $target = $('.entries a:first')
+    $.ajax
+      url: '/entries/draw'
+      method: 'PUT'
+      data:
+        draw_ids: [
+          $target.attr('id').replace('entry-', ''),
+          $target.data('lose_id')]
+      success: (data) ->
         location.reload()
