@@ -5,7 +5,7 @@
       %i.icon-refresh
 
   .entries.cf
-    %a{href: '#'}
+    %a{href: '#', id: "entry-#{@entries[0].id}", :'data-lose_id' => @entries[1].id}
       .entry
         .black-card
           = @entries[0].black_card
@@ -19,7 +19,7 @@
     .vs
       VS!
 
-    %a{href: '#'}
+    %a{href: '#', id: "entry-#{@entries[1].id}", :'data-lose_id' => @entries[0].id}
       .entry
         .black-card
           = @entries[1].black_card

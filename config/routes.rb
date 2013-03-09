@@ -1,6 +1,10 @@
 HumanitywarRails::Application.routes.draw do
-  resources :entries
   resources :playas
+
+  match 'entries/win' => 'entries#win', :via => :put
+  match 'entries/?' => 'entries#index', :via => :get
+  match 'entries/:id' => 'entries#show', :via => :get
+
   root :to => 'entries#index'
 
   # The priority is based upon order of creation:

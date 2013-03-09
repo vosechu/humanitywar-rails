@@ -25,17 +25,12 @@ class EntriesController < ApplicationController
     end
   end
 
-  # PUT /entries/1
-  # PUT /entries/1.json
-  def update
-    @entry = Entry.find(params[:id])
-
+  # PUT /entries/win
+  def win
+    Entry.find(params[:win_id]).increment!(:wins)
+    Entry.find(params[:lose_id]).increment!(:loses)
     respond_to do |format|
-      if @entry.update_attributes(params[:entry])
-        format.json { head :no_content }
-      else
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
+      format.json { head :ok }
     end
   end
 end
