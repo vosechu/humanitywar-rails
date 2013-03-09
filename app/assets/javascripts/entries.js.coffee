@@ -12,4 +12,6 @@ $ ->
         win_id: $target.attr('id').replace('entry-', '')
         lose_id: $target.data('lose_id')
       success: (data) ->
-        document.reload()
+        location.reload()
+      error: () ->
+        location.reload()
