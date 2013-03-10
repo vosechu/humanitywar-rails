@@ -1,36 +1,58 @@
-.wrapper
-  %h1
-    Cards Against Humanity War
-    %a{href: '#', class: 'refresh'}
+.entries.cf
+  %a{href: '#', id: "entry-#{@entries[0].id}", :'data-lose_id' => @entries[1].id}
+    .entry
+      .black-card
+        = @entries[0].black_card
+        .icon
+          Cards Against Humanity
+      .white-card
+        = @entries[0].white_card
+        .icon
+          Cards Against Humanity
+
+  .vs
+    VS!
+    %br
+    %br
+    %br
+    %a{href: '#'}
       %i.icon-refresh
 
-  .entries.cf
-    %a{href: '#', id: "entry-#{@entries[0].id}", :'data-lose_id' => @entries[1].id}
-      .entry
-        .black-card
-          = @entries[0].black_card
-          .icon
-            Cards Against Humanity
-        .white-card
-          = @entries[0].white_card
-          .icon
-            Cards Against Humanity
+  %a{href: '#', id: "entry-#{@entries[1].id}", :'data-lose_id' => @entries[0].id}
+    .entry
+      .black-card
+        = @entries[1].black_card
+        .icon
+          Cards Against Humanity
+      .white-card
+        = @entries[1].white_card
+        .icon
+          Cards Against Humanity
 
-    .vs
-      VS!
+- if @small_entries
+  .small-entries.cf
+    .third
+      %a{href: "/entries/#{@small_entries[:last_win_id].id}", class: 'cf'}
+        .entry
+          %h2 Your choice
+          .black-card
+            = @small_entries[:last_win_id].black_card
+          .white-card
+            = @small_entries[:last_win_id].white_card
+      %ul
+        %li Wins: #{@small_entries[:last_win_id].wins || 0}
+        %li Loses: #{@small_entries[:last_win_id].loses || 0}
+        %li Draws: #{@small_entries[:last_win_id].draws || 0}
 
-    %a{href: '#', id: "entry-#{@entries[1].id}", :'data-lose_id' => @entries[0].id}
-      .entry
-        .black-card
-          = @entries[1].black_card
-          .icon
-            Cards Against Humanity
-        .white-card
-          = @entries[1].white_card
-          .icon
-            Cards Against Humanity
-
-  - if !params[:easy_mode]
-    %a{href: '/?easy_mode=true', class: 'easy-mode'} Try out easy mode
-  - else
-    %a{href: '/', class: 'easy-mode'} Turn off easy mode
+    .third
+      %a{href: "/entries/#{@small_entries[:last_lose_id].id}", class: 'cf'}
+        .entry
+          %h2 Not your choice
+          .black-card
+            = @small_entries[:last_lose_id].black_card
+          .white-card
+            = @small_entries[:last_lose_id].white_card
+      %ul
+        %li Wins: #{@small_entries[:last_lose_id].wins || 0}
+        %li Loses: #{@small_entries[:last_lose_id].loses || 0}
+        %li Draws: #{@small_entries[:last_lose_id].draws || 0}

@@ -14,7 +14,7 @@ $ ->
         lose_id: $target.data('lose_id')
       success: (data) ->
         location.reload()
-  $('.refresh').on 'click', (e) ->
+  $('.icon-refresh').on 'click', (e) ->
     e.preventDefault()
     $target = $('.entries a:first')
     $.ajax

@@ -1,4 +1,6 @@
 class EntriesController < ApplicationController
+  before_filter :find_small_entries
+
   # GET /entries
   # GET /entries.json
   def index
@@ -27,8 +29,15 @@ class EntriesController < ApplicationController
 
   # PUT /entries/win
   def win
+    # Store the last entries so we can display them below
+    session[:last_win_id] = params[:win_id]
+    session[:last_lose_id] = params[:lose_id]
+
+    # Increment the win/lose counters
     Entry.find(params[:win_id]).increment!(:wins)
     Entry.find(params[:lose_id]).increment!(:loses)
+
+    # Respond with an empty
     respond_to do |format|
       format.json { render json: {} }
     end
@@ -41,5 +50,14 @@ class EntriesController < ApplicationController
     respond_to do |format|
       format.json { render json: {} }
     end
+  end
+
+  private
+
+  def find_small_entries
+    @small_entries = {
+      :last_win_id => Entry.find(session[:last_win_id]),
+      :last_lose_id => Entry.find(session[:last_lose_id])
+    }
   end
 end

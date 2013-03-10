@@ -1,0 +1,44 @@
+!!!
+%html
+  %head
+    %title Humanitywar
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    %header.cf
+      .wrapper
+        %h1
+          Cards
+          %br
+          Against
+          %br
+          Humanity
+          %br
+          War
+
+        %nav
+          %ul
+            %li
+              %a{href: '#'} Home
+            %li
+              %a{href: '#'} Winningest
+            %li
+              %a{href: '#'} Losingest
+            %li
+              %a{href: '#'} Newest
+            %li
+              %a{href: '#'} Submit
+            %li
+              - if !params[:easy_mode]
+                %a{href: '/?easy_mode=true', class: 'easy-mode'} Easy mode
+                (off)
+              - else
+                %a{href: '/', class: 'easy-mode'} Easy mode
+                (on)
+
+    .wrapper
+      = yield
+      %footer
+        %p
+          Cards Against Humanity is a trademark of Cards Against Humanity LLC
