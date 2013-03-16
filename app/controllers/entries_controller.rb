@@ -55,9 +55,11 @@ class EntriesController < ApplicationController
   private
 
   def find_small_entries
-    @small_entries = {
-      :last_win_id => Entry.find(session[:last_win_id]),
-      :last_lose_id => Entry.find(session[:last_lose_id])
-    }
+    if session[:last_win_id]
+      @small_entries = {
+        :last_win_id => Entry.find(session[:last_win_id]),
+        :last_lose_id => Entry.find(session[:last_lose_id])
+      }
+    end
   end
 end
