@@ -18,4 +18,5 @@ class Entry < ActiveRecord::Base
     return g if g.length > 1
     return self.easy_game
   end
+
 end

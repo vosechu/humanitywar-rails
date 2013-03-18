@@ -1,5 +1,5 @@
 <div class="lists">
-  <h1>Top 10 Winningest Entries</h1>
+  <h1>Winningest Entries</h1>
 
   <!-- print out number of wins, bc text and wc text -->
   <div class="small-entries">
@@ -11,6 +11,13 @@
     </div>
     <% end %>
 
+  </div>
+
+  <div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @entry %>
+    </div>
+    <%= will_paginate @entry, :container => false %>
   </div>
 
 </div>

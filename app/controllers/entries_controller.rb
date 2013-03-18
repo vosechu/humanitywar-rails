@@ -54,7 +54,7 @@ class EntriesController < ApplicationController
 
 # GET /entries/winning
   def winning
-    @entry = Entry.winningest
+    @entry = Entry.winningest.paginate(:page => params[:page], :per_page => 5)
 
     respond_to do |format|
       format.html # winning.html.erb
@@ -64,7 +64,7 @@ class EntriesController < ApplicationController
 
 # GET /entries/losing
   def losing
-    @entry = Entry.losingest
+    @entry = Entry.losingest.paginate(:page => params[:page], :per_page => 5)
 
     respond_to do |format|
       format.html # losing.html.erb
@@ -74,7 +74,7 @@ class EntriesController < ApplicationController
 
 # GET /entries/newest
   def newest
-    @entry = Entry.newest
+    @entry = Entry.newest.paginate(:page => params[:page], :per_page => 5)
 
     respond_to do |format|
       format.html # newest.html.erb
