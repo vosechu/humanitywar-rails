@@ -1,12 +1,9 @@
 HumanitywarRails::Application.routes.draw do
   resources :playas
-
-  match 'entries/win'   => 'entries#win', :via => :put
-  match 'entries/draw'  => 'entries#draw', :via => :put
-  match 'entries/?'     => 'entries#index', :via => :get
-  match 'entries/:id'   => 'entries#show', :via => :get
-  match 'entries/new'   => 'entries#new', :via  => :get
-  match 'entries/create'=>  'entries#create', :via => :post
+  resources :entries, :only => [:new, :create, :index, :show] do
+    put :win, :on => :collection
+    put :draw, :on => :collection
+  end
 
   root :to => 'entries#index'
 
