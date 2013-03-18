@@ -62,6 +62,16 @@ class EntriesController < ApplicationController
     end
   end
 
+# GET /entries/losing
+  def losing
+    @entry = Entry.order("loses DESC").limit(10)
+
+    respond_to do |format|
+      format.html # losing.html.erb
+      format.json { render json: @entry }
+    end
+  end
+
   private
 
   def find_small_entries

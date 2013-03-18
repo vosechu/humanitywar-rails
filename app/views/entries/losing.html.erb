@@ -1,11 +1,11 @@
 <div class="lists">
-  <h1>Top 10 Winningest Entries</h1>
+  <h1>Top 10 Losingest Entries</h1>
 
-  <!-- print out number of wins, bc text and wc text -->
+  <!-- print out number of losses (misspelled in db), bc text and wc text -->
   <div class="small-entries">
     <% @entry.each do |e| %>
     <div class="cf">
-      <h2>Wins: <%= e.wins %></h2>
+      <h2>Losses: <%= e.loses %></h2>
       <div class="black-card"><%= e.black_card %></div>
       <div class="white-card"><%= e.white_card %></div>
     </div>
