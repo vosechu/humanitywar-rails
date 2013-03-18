@@ -9,6 +9,7 @@ class Entry < ActiveRecord::Base
   scope :not_multi, where("black_cards.blanks = 1")
   scope :game, not_multi.order("random()").limit(2)
 
+
   def self.easy_game
     b = BlackCard.used.sample
     g = self.game.where(:black_card_id => b.id)

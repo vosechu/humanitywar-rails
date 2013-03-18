@@ -1,0 +1,16 @@
+= form_for @entry do |f|
+  - if @entry.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@entry.errors.count, "error")} prohibited this entry from being saved:"
+      %ul
+        - @entry.errors.full_messages.each do |msg|
+          %li= msg
+
+  / .field
+  /   = f.label :black_card
+  /   = f.text_field :black_card
+  .field
+    = f.label :white_cards
+    / = f.collection_select :white_cards
+  .actions
+    = f.submit 'Save'
