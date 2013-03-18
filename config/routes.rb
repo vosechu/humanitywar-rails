@@ -4,6 +4,7 @@ HumanitywarRails::Application.routes.draw do
   match 'entries/win'   => 'entries#win', :via => :put
   match 'entries/draw'  => 'entries#draw', :via => :put
   match 'entries/?'     => 'entries#index', :via => :get
+  match 'entries/winning' => 'entries#winning', :via => :get
   match 'entries/:id'   => 'entries#show', :via => :get
 
   root :to => 'entries#index'

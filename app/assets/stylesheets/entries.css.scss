@@ -47,7 +47,7 @@ header {
 }
 .wrapper {
   margin: 0 auto;
-  width: 1300px;
+  width: 900px;
 }
 .vs {
   float: left;
@@ -153,5 +153,8 @@ header {
   ul li {
     display: inline-block;
     list-style: none;
+  }
+  winners {
+    margin: 0 auto;
   }
 }
