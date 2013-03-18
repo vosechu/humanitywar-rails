@@ -8,6 +8,9 @@ class Entry < ActiveRecord::Base
 
   scope :not_multi, where("black_cards.blanks = 1")
   scope :game, not_multi.order("random()").limit(2)
+  scope :winningest, order("wins DESC").limit(10)
+  scope :losingest, order("loses DESC").limit(10)
+  scope :newest, order("created_at DESC").limit(10)
 
   def self.easy_game
     b = BlackCard.used.sample

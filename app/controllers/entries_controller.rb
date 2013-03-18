@@ -54,7 +54,7 @@ class EntriesController < ApplicationController
 
 # GET /entries/winning
   def winning
-    @entry = Entry.order("wins DESC").limit(10)
+    @entry = Entry.winningest
 
     respond_to do |format|
       format.html # winning.html.erb
@@ -64,10 +64,20 @@ class EntriesController < ApplicationController
 
 # GET /entries/losing
   def losing
-    @entry = Entry.order("loses DESC").limit(10)
+    @entry = Entry.losingest
 
     respond_to do |format|
       format.html # losing.html.erb
+      format.json { render json: @entry }
+    end
+  end
+
+# GET /entries/newest
+  def newest
+    @entry = Entry.newest
+
+    respond_to do |format|
+      format.html # newest.html.erb
       format.json { render json: @entry }
     end
   end
