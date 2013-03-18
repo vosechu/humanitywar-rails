@@ -20,7 +20,7 @@
         %nav
           %ul
             %li
-              %a{href: '#'} Home
+              =link_to "Home", root_path
             %li
               %a{href: '#'} Winningest
             %li
@@ -28,7 +28,7 @@
             %li
               %a{href: '#'} Newest
             %li
-              %a{href: '#'} Submit
+              =link_to "Submit", new_entry_path
             %li
               - if !params[:easy_mode]
                 %a{href: '/?easy_mode=true', class: 'easy-mode'} Easy mode
