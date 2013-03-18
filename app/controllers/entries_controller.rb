@@ -52,6 +52,33 @@ class EntriesController < ApplicationController
     end
   end
 
+  #GET /entries/new
+  def new
+    @entry = Entry.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @entry }
+    end
+  end
+
+  #POST /entries/create
+  def create
+    @entry = Entry.new
+
+    respond_to do |format|
+      if @entry.save
+        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.json { render json: @entry, status: :created, location: @entry }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @entry.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
+
   private
 
   def find_small_entries

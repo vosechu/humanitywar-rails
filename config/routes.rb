@@ -5,6 +5,8 @@ HumanitywarRails::Application.routes.draw do
   match 'entries/draw'  => 'entries#draw', :via => :put
   match 'entries/?'     => 'entries#index', :via => :get
   match 'entries/:id'   => 'entries#show', :via => :get
+  match 'entries/new'   => 'entries#new', :via  => :get
+  match 'entries/create'=>  'entries#create', :via => :post
 
   root :to => 'entries#index'
 
