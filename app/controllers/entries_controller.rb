@@ -64,7 +64,7 @@ class EntriesController < ApplicationController
 
   #POST /entries/create
   def create
-    @entry = Entry.new
+    @entry = Entry.new(params[:entry].merge(:playa_id => 1))
 
     respond_to do |format|
       if @entry.save
