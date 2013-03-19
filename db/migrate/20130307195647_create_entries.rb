@@ -2,7 +2,6 @@ class CreateEntries < ActiveRecord::Migration
   def change
     create_table :entries do |t|
       t.references :playa
-      t.references :white_card
       t.references :black_card
       t.integer :wins
       t.integer :loses
@@ -11,7 +10,6 @@ class CreateEntries < ActiveRecord::Migration
       t.timestamps
     end
     add_index :entries, :playa_id
-    add_index :entries, :white_card_id
     add_index :entries, :black_card_id
   end
 end

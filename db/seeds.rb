@@ -791,6 +791,8 @@ w_length = WhiteCard.count
   e = Entry.new
   e.playa_id = p.id
   e.black_card_id = rand(b_length) + 1
-  e.white_card_id = rand(w_length) + 1
+  BlackCard.find(e.black_card_id).blanks.times do
+      e.white_cards << WhiteCard.find(rand(w_length) + 1)
+  end
   e.save!
 end
