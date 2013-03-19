@@ -1,6 +1,6 @@
 class Entry < ActiveRecord::Base
   belongs_to :playa
-  belongs_to :white_card
+  has_and_belongs_to_many :white_cards
   belongs_to :black_card
   attr_accessible :draws, :loses, :wins, :white_card_id, :black_card_id, :playa_id
 
