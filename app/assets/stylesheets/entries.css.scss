@@ -1,3 +1,4 @@
+
 // Place all the styles related to the Entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -48,6 +49,9 @@ header {
 .wrapper {
   margin: 0 auto;
   width: 900px;
+}
+#home_page .wrapper {
+  width: 1300px;
 }
 .vs {
   float: left;
@@ -152,7 +156,10 @@ header {
     display: inline-block;
     list-style: none;
   }
-  .lists {
-    margin: 0 auto;
-  }
+}
+#about_page img {
+  width: 300px;
+  float: left;
+  padding-right: 40px;
+  padding-bottom: 20px;
 }

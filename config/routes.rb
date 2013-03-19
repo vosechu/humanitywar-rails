@@ -10,6 +10,7 @@ HumanitywarRails::Application.routes.draw do
   match 'entries/losing' => 'entries#losing', :via => :get
   match 'entries/newest' => 'entries#newest', :via => :get
   match 'entries/:id'   => 'entries#show', :via => :get
+  match 'static/:action', :controller => "static"
 
   root :to => 'entries#index'
 
