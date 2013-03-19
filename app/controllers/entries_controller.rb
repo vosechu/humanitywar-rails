@@ -54,31 +54,31 @@ class EntriesController < ApplicationController
 
 # GET /entries/winning
   def winning
-    @entry = Entry.winningest.paginate(:page => params[:page], :per_page => 5)
+    @entries = Entry.winningest.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # winning.html.erb
-      format.json { render json: @entry }
+      format.json { render json: @entries }
     end
   end
 
 # GET /entries/losing
   def losing
-    @entry = Entry.losingest.paginate(:page => params[:page], :per_page => 5)
+    @entries = Entry.losingest.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # losing.html.erb
-      format.json { render json: @entry }
+      format.json { render json: @entries }
     end
   end
 
 # GET /entries/newest
   def newest
-    @entry = Entry.newest.paginate(:page => params[:page], :per_page => 5)
+    @entries = Entry.newest.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # newest.html.erb
-      format.json { render json: @entry }
+      format.json { render json: @entries }
     end
   end
 
