@@ -53,6 +53,36 @@ class EntriesController < ApplicationController
     end
   end
 
+# GET /entries/winning
+  def winning
+    @entries = Entry.winningest.paginate(:page => params[:page])
+
+    respond_to do |format|
+      format.html # winning.html.erb
+      format.json { render json: @entries }
+    end
+  end
+
+# GET /entries/losing
+  def losing
+    @entries = Entry.losingest.paginate(:page => params[:page])
+
+    respond_to do |format|
+      format.html # losing.html.erb
+      format.json { render json: @entries }
+    end
+  end
+
+# GET /entries/newest
+  def newest
+    @entries = Entry.newest.paginate(:page => params[:page])
+
+    respond_to do |format|
+      format.html # newest.html.erb
+      format.json { render json: @entries }
+    end
+  end
+
   private
 
   def find_small_entries
