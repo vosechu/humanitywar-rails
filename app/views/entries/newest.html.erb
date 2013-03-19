@@ -1,0 +1,18 @@
+<div class="lists">
+  <h1>Newest Entries</h1>
+
+  <!-- print out number of losses (misspelled in db), bc text and wc text -->
+  <div class="small-entries">
+    <% @entries.each do |e| %>
+    <div class="cf">
+      <h3>Date Created: <%= e.created_at %></h3>
+      <div class="black-card"><%= e.black_card %></div>
+      <div class="white-card"><%= e.white_card %></div>
+    </div>
+    <% end %>
+
+  </div>
+
+<%= render "pagination" %>
+
+</div>

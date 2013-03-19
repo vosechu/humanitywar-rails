@@ -8,6 +8,9 @@ class Entry < ActiveRecord::Base
 
   scope :not_multi, where("black_cards.blanks = 1")
   scope :game, not_multi.order("random()").limit(2)
+  scope :winningest, order("wins DESC")
+  scope :losingest, order("loses DESC")
+  scope :newest, order("created_at DESC")
 
   def self.easy_game
     b = BlackCard.used.sample
@@ -15,4 +18,7 @@ class Entry < ActiveRecord::Base
     return g if g.length > 1
     return self.easy_game
   end
+
+  self.per_page = 10
+
 end
