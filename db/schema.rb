@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307195647) do
+ActiveRecord::Schema.define(:version => 20130319171824) do
 
   create_table "black_cards", :force => true do |t|
     t.string   "text"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20130307195647) do
   add_index "entries", ["white_card_id"], :name => "index_entries_on_white_card_id"
 
   create_table "playas", :force => true do |t|
-    t.string   "email"
+    t.string   "user"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

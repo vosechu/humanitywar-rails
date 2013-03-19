@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
 
   # GET /entries
   # GET /entries.json
-  def index
+  def index1
     if params[:easy_mode] == 'true'
       @entries = Entry.easy_game
     else

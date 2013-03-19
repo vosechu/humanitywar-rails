@@ -1,8 +1,8 @@
 class Playa < ActiveRecord::Base
-  attr_accessible :email
+  attr_accessible :user
   has_many :entries
 
   def to_s
-    self.email
+    self.user
   end
 end
