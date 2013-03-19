@@ -5,7 +5,7 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
+  %body{:id => @body_id}
     %header.cf
       .wrapper
         %h1
@@ -20,7 +20,7 @@
         %nav
           %ul
             %li
-              %a{href: '#'} Home
+              %a{href: '/'} Home
             %li
               %a{href: '#'} Winningest
             %li
@@ -36,6 +36,8 @@
               - else
                 %a{href: '/', class: 'easy-mode'} Easy mode
                 (on)
+            %li
+              %a{href: '/static/about'} About Us
 
     .wrapper
       = yield
