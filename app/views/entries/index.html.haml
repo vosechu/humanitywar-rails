@@ -39,7 +39,7 @@
           %h2 Your choice
           .black-card
             = @small_entries[:last_win_id].black_card
-          - @entries[0].white_cards.each do |card|
+          - @small_entries[:last_win_id].white_cards.each do |card|
             .white-card
               = card
       %ul
@@ -53,7 +53,7 @@
           %h2 Not your choice
           .black-card
             = @small_entries[:last_lose_id].black_card
-          - @entries[0].white_cards.each do |card|
+          - @small_entries[:last_lose_id].white_cards.each do |card|
             .white-card
               = card
       %ul
