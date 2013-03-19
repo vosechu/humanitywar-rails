@@ -8,8 +8,8 @@
       - @entries[0].white_cards.each do |card|
         .white-card
           = card
-        .icon
-          Cards Against Humanity
+          .icon
+            Cards Against Humanity
 
   .vs
     VS!
@@ -28,8 +28,8 @@
       - @entries[0].white_cards.each do |card|
         .white-card
           = card
-        .icon
-          Cards Against Humanity
+          .icon
+            Cards Against Humanity
 
 - if @small_entries
   .small-entries.cf
@@ -53,9 +53,9 @@
           %h2 Not your choice
           .black-card
             = @small_entries[:last_lose_id].black_card
-        - @entries[0].white_cards.each do |card|
-          .white-card
-            = card
+          - @entries[0].white_cards.each do |card|
+            .white-card
+              = card
       %ul
         %li Wins: #{@small_entries[:last_lose_id].wins || 0}
         %li Loses: #{@small_entries[:last_lose_id].loses || 0}
