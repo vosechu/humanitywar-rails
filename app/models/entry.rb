@@ -1,10 +1,10 @@
 class Entry < ActiveRecord::Base
   belongs_to :playa
-  belongs_to :white_card
+  has_and_belongs_to_many :white_cards
   belongs_to :black_card
   attr_accessible :draws, :loses, :wins
 
-  default_scope includes(:black_card, :white_card, :playa)
+  default_scope includes(:black_card, :white_cards, :playa)
 
   scope :not_multi, where("black_cards.blanks = 1")
   scope :game, not_multi.order("random()").limit(2)
