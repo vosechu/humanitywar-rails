@@ -30,7 +30,7 @@ describe EntriesController do
   # update the return value of this method accordingly.
   def create_entry
     entry = Entry.create()
-    entry.white_card = @white_card
+    entry.white_cards << @white_card
     entry.black_card = @black_card
     entry.save
     return entry
