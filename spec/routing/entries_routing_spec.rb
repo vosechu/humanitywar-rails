@@ -1,6 +1,9 @@
 require "spec_helper"
 
 describe EntriesController do
+  before(:each) do
+    pending
+  end
   describe "routing" do
     it "routes #root to #index" do
       get("/").should route_to("entries#index")
