@@ -5,7 +5,7 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
+  %body{:id => @body_id}
     %header.cf
       .wrapper
         %h1
@@ -20,13 +20,13 @@
         %nav
           %ul
             %li
-              =link_to "Home", root_path
+              %a{href: root_path} Home
             %li
-              %a{href: '#'} Winningest
+              %a{href: entries_winning_path} Winningest
             %li
-              %a{href: '#'} Losingest
+              %a{href: entries_losing_path} Losingest
             %li
-              %a{href: '#'} Newest
+              %a{href: entries_newest_path} Newest
             %li
               =link_to "Submit", new_entry_path
             %li
@@ -36,6 +36,8 @@
               - else
                 %a{href: '/', class: 'easy-mode'} Easy mode
                 (on)
+            %li
+              %a{href: '/static/about'} About Us
 
     .wrapper
       = yield

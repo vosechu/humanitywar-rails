@@ -1,0 +1,18 @@
+<div class="lists">
+  <h1>Losingest Entries</h1>
+
+  <!-- print out number of losses (misspelled in db), bc text and wc text -->
+  <div class="small-entries">
+    <% @entries.each do |e| %>
+    <div class="cf">
+      <h2>Losses: <%= e.loses %></h2>
+      <div class="black-card"><%= e.black_card %></div>
+      <div class="white-card"><%= e.white_card %></div>
+    </div>
+    <% end %>
+
+  </div>
+
+<%= render "pagination" %>
+
+</div>

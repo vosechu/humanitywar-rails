@@ -5,10 +5,11 @@
         = @entries[0].black_card
         .icon
           Cards Against Humanity
-      .white-card
-        = @entries[0].white_cards.first
-        .icon
-          Cards Against Humanity
+      - @entries[0].white_cards.each do |card|
+        .white-card
+          = card
+          .icon
+            Cards Against Humanity
 
   .vs
     VS!
@@ -24,10 +25,11 @@
         = @entries[1].black_card
         .icon
           Cards Against Humanity
-      .white-card
-        = @entries[1].white_cards.first
-        .icon
-          Cards Against Humanity
+      - @entries[1].white_cards.each do |card|
+        .white-card
+          = card
+          .icon
+            Cards Against Humanity
 
 - if @small_entries
   .small-entries.cf
@@ -37,8 +39,9 @@
           %h2 Your choice
           .black-card
             = @small_entries[:last_win_id].black_card
-          .white-card
-            = @small_entries[:last_win_id].white_card
+          - @small_entries[:last_win_id].white_cards.each do |card|
+            .white-card
+              = card
       %ul
         %li Wins: #{@small_entries[:last_win_id].wins || 0}
         %li Loses: #{@small_entries[:last_win_id].loses || 0}
@@ -50,8 +53,9 @@
           %h2 Not your choice
           .black-card
             = @small_entries[:last_lose_id].black_card
-          .white-card
-            = @small_entries[:last_lose_id].white_card
+          - @small_entries[:last_lose_id].white_cards.each do |card|
+            .white-card
+              = card
       %ul
         %li Wins: #{@small_entries[:last_lose_id].wins || 0}
         %li Loses: #{@small_entries[:last_lose_id].loses || 0}

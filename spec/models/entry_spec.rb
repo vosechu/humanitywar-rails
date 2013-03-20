@@ -33,35 +33,6 @@ describe Entry do
     end
   end
 
-  context "not_multi scope" do
-    before(:each) do
-      @black_card_2_blanks = BlackCard.create!(:text => "test black", :blanks => 2)
-      @black_card_1_blank = BlackCard.create!(:text => "test black", :blanks => 1)
-      @playa = Playa.create!(:user => "Al")
-
-      @entry_1_blank = Entry.create()
-      @entry_1_blank.playa = @playa
-      @entry_1_blank.black_card = @black_card_1_blank
-      @entry_1_blank.black_card.blanks.times do
-        @entry_1_blank.white_cards << WhiteCard.create!(:text => "white card 1")
-      end
-      @entry_1_blank.save
-
-      @entry_2_blanks = Entry.create()
-      @entry_2_blanks.playa = @playa
-      @entry_2_blanks.black_card = @black_card_2_blanks
-      @entry_2_blanks.black_card.blanks.times do
-        @entry_2_blanks.white_cards << WhiteCard.create!(:text => "white card 2")
-      end
-      @entry_2_blanks.save
-    end
-
-    it "should not return entries with blanks" do
-      Entry.not_multi.should include(@entry_1_blank)
-      Entry.not_multi.should_not include(@entry_2_blanks)
-    end
-  end
-
   context "easy_game pseudo-scope" do
     before(:each) do
       @black_card = BlackCard.create!(:text => "test black", :blanks => 1)

@@ -1,10 +1,15 @@
 HumanitywarRails::Application.routes.draw do
   resources :playas
+
   resources :entries, :only => [:new, :create, :index, :show] do
     put :win, :on => :collection
     put :draw, :on => :collection
+    get :winning, :on => :collection
+    get :losing, :on => :collection
+    get :newest, :on => :collection
   end
 
+  match 'static/:action', :controller => "static"
   root :to => 'entries#index'
 
   # The priority is based upon order of creation:
