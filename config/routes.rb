@@ -7,7 +7,9 @@ HumanitywarRails::Application.routes.draw do
   match 'entries/:id'   => 'entries#show', :via => :get
   match 'static/:action', :controller => "static"
 
-  root :to => 'entries#index'
+  # root :to => 'entries#index'
+
+  match '/entries',  to: 'entries#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
