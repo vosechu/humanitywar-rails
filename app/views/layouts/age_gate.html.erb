@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>You must be 18 years old or older to play</title>
+  <style type="text/css">
+    body { font-family: arial, sans-serif; background: url(images/cah.jpg);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      }
+    div.dialog {
+      width: 380px;
+      height: 205px;
+      padding: 35px 60px;
+      margin: 8em auto;
+      background-color: #fff;
+      text-align: center;
+      opacity:0.9;
+      filter:alpha(opacity=90); /* For IE8 and earlier */
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+    }
+    h1 {
+      font-size: 1.8em;
+      color: #fff;
+      background: #000;
+      line-height: 1.2em;
+      padding: 5px;
+      opacity:0.85;
+      filter:alpha(opacity=85); /* For IE8 and earlier */
+    }
+    h2 {
+      font-size: 1.2em;
+      color: #000;
+      line-height: 1.2em;
+      opacity:0.85;
+      filter:alpha(opacity=85); /* For IE8 and earlier */
+    }
+    .btn {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #fff;
+      background: #d50303;
+      width: 150px;
+      margin: 0 auto;
+      padding: 10px;
+      border: 0;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/404.html -->
+  <div class="dialog">
+    <h1>You must be at least 18 years old to enter.</h1>
+    <h2>Yes, I am 18 years or older.</h2>
+    <form action="/entries">
+      <input type="submit" value="Click to Play" class="btn">
+    </form>
+  </div>
+</body>
+</html>

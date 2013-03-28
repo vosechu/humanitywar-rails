@@ -8,33 +8,34 @@
   %body{:id => @body_id}
     %header.cf
       .wrapper
-        %h1
-          Cards
-          %br
-          Against
-          %br
-          Humanity
-          %br
-          War
+        %a{href: entries_path}
+          %h1
+            Cards
+            %br
+            Against
+            %br
+            Humanity
+            %br
+            War
 
         %nav
           %ul
             %li
-              %a{href: root_path} Home
+              %a{href: entries_path} Home
             %li
-              %a{href: entries_winning_path} Winningest
+              %a{href: winning_entries_path} Winningest
             %li
-              %a{href: entries_losing_path} Losingest
+              %a{href: losing_entries_path} Losingest
             %li
-              %a{href: entries_newest_path} Newest
+              %a{href: newest_entries_path} Newest
             %li
               =link_to "Submit", new_entry_path
             %li
-              - if !params[:easy_mode]
-                %a{href: '/?easy_mode=true', class: 'easy-mode'} Easy mode
+              - if params[:easy_mode] != "true"
+                %a{href: '?easy_mode=true', class: 'easy-mode'} Easy mode
                 (off)
               - else
-                %a{href: '/', class: 'easy-mode'} Easy mode
+                %a{href: '?easy_mode=false', class: 'easy-mode'} Easy mode
                 (on)
             %li
               %a{href: '/static/about'} About Us
