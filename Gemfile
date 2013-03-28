@@ -18,7 +18,6 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'haml-rails', '~> 0.4.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -26,6 +25,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'haml-rails', '~> 0.4.0'
 gem 'jquery-rails'
 gem 'will_paginate', '~> 3.0'
 
