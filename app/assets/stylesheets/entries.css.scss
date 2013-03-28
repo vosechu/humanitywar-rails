@@ -71,9 +71,25 @@ header {
 }
 .entry {
   float: left;
-  &:hover {
-    border: 3px dashed green;
-    margin: -3px;
+}
+.white-cards {
+  float: left;
+  position: relative;
+
+  .overlap-0 {
+    position: relative;
+    top: 0px;
+    left: 0px;
+  }
+  .overlap-1 {
+    position: absolute;
+    top: 60px;
+    left: 40px;
+  }
+  .overlap-2 {
+    position: absolute;
+    top: 120px;
+    left: 80px;
   }
 }
 .white-card, .black-card {
@@ -106,8 +122,10 @@ header {
   }
 }
 .white-card {
+  background-color: white;
   color: black;
   border: 1px solid black;
+
   .icon {
     background: transparent url('/assets/white-icon.png') no-repeat;
   }
@@ -120,14 +138,27 @@ header {
     background: transparent url('/assets/black-icon.png') no-repeat;
   }
 }
-.third {
-  display: inline-block;
-  width: 33%;
-  vertical-align: top;
-}
 .small-entries {
   margin-top: 60px;
 
+  .entry {
+    margin-right: 50px;
+  }
+  .white-cards {
+    position: relative;
+    float: left;
+
+    .overlap-1 {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+    }
+    .overlap-2 {
+      position: absolute;
+      top: 80px;
+      left: 80px;
+    }
+  }
   .white-card, .black-card {
     position: relative;
     float: left;
@@ -138,12 +169,6 @@ header {
     padding: 12px;
     margin: 3px;
     font-size: .8em;
-  }
-  .entry {
-    border: none;
-    &:hover {
-      margin: 0;
-    }
   }
   h2 {
     margin-bottom: 6px;
