@@ -31,12 +31,19 @@
             %li
               %a{href: '#'} Submit
             %li
-              - if params[:easy_mode] != "true"
-                %a{href: '?easy_mode=true', class: 'easy-mode'} Easy mode
-                (off)
+              - if params[:sfw_mode] != "false"
+                %a{href: '?sfw_mode=false'} Safe for work mode
+                (is on)
               - else
+                %a{href: '?sfw_mode=true'} Safe for work mode
+                (is off)
+            %li
+              - if params[:easy_mode] != "false"
                 %a{href: '?easy_mode=false', class: 'easy-mode'} Easy mode
-                (on)
+                (is on)
+              - else
+                %a{href: '?easy_mode=true', class: 'easy-mode'} Easy mode
+                (is off)
             %li
               %a{href: '/static/about'} About Us
 

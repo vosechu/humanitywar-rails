@@ -11,6 +11,15 @@ class Entry < ActiveRecord::Base
   scope :losingest, order("loses DESC")
   scope :newest, order("created_at DESC")
 
+  def self.clean
+    entries = self.game
+    entries.map do |entry|
+      entry.black_card.text = Lorem::Base.new('words', 10).output
+      entry.white_cards.map {|card| card.text = Lorem::Base.new('words', 5).output}
+    end
+    return entries
+  end
+
   def self.easy_game
     b = BlackCard.used.sample
     g = self.game.where(:black_card_id => b.id)

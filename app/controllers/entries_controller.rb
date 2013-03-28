@@ -10,6 +10,8 @@ class EntriesController < ApplicationController
       @entries = Entry.game
     end
 
+    @entries = @entries.clean if params[:sfw_mode] != 'false'
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @entries }
@@ -86,10 +88,18 @@ class EntriesController < ApplicationController
 
   def find_small_entries
     if session[:last_win_id]
-      @small_entries = {
-        :last_win_id => Entry.find(session[:last_win_id]),
-        :last_lose_id => Entry.find(session[:last_lose_id])
-      }
+      if params[:sfw_mode] != 'false'
+        entries = Entry.clean
+        @small_entries = {
+          :last_win_id => entries[0],
+          :last_lose_id => entries[1]
+        }
+      else
+        @small_entries = {
+          :last_win_id => Entry.find(session[:last_win_id]),
+          :last_lose_id => Entry.find(session[:last_lose_id])
+        }
+      end
     end
   end
 end
