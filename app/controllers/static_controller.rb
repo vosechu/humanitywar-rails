@@ -1,13 +1,8 @@
 class StaticController < ApplicationController
-
-  def generic
-    respond_to do |format|
-      format.html
-    end
+  def about
   end
 
-  def about
-    @body_id = "about_page"
-    generic
+  def age_gate
+    render :nothing => true, :layout => "age_gate"
   end
 end

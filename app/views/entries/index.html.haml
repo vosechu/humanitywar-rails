@@ -1,3 +1,4 @@
+- @body_id = "entries"
 .entries.cf
   %a{href: '#', id: "entry-#{@entries[0].id}", :'data-lose_id' => @entries[1].id}
     .entry
@@ -5,11 +6,13 @@
         = @entries[0].black_card
         .icon
           Cards Against Humanity
-      - @entries[0].white_cards.each do |card|
-        .white-card
-          = card
-          .icon
-            Cards Against Humanity
+      .white-cards{:class => (@entries[0].white_cards.count > 1 && 'multi-card')}
+        - @entries[0].white_cards.each_with_index do |card, index|
+          .white-card-wrapper{:class => "overlap-#{index}"}
+            .white-card
+              = card
+              .icon
+                Cards Against Humanity
 
   .vs
     VS!
@@ -20,41 +23,44 @@
       %i.icon-refresh
 
   %a{href: '#', id: "entry-#{@entries[1].id}", :'data-lose_id' => @entries[0].id}
-    .entry
+    .entry.cf
       .black-card
         = @entries[1].black_card
         .icon
           Cards Against Humanity
-      - @entries[1].white_cards.each do |card|
-        .white-card
-          = card
-          .icon
-            Cards Against Humanity
+      .white-cards{:class => (@entries[1].white_cards.count > 1 && 'multi-card')}
+        - @entries[1].white_cards.each_with_index do |card, index|
+          .white-card-wrapper{:class => "overlap-#{index}"}
+            .white-card
+              = card
+              .icon
+                Cards Against Humanity
 
 - if @small_entries
   .small-entries.cf
-    .third
-      %a{href: "/entries/#{@small_entries[:last_win_id].id}", class: 'cf'}
-        .entry
-          %h2 Your choice
-          .black-card
-            = @small_entries[:last_win_id].black_card
-          - @small_entries[:last_win_id].white_cards.each do |card|
-            .white-card
+    .entry.cf
+      %a{href: "/entries/#{@small_entries[:last_win_id].id}"}
+        %h2 Your choice
+        .black-card
+          = @small_entries[:last_win_id].black_card
+        .white-cards
+          - @small_entries[:last_win_id].white_cards.each_with_index do |card, index|
+            .white-card{:class => "overlap-#{index}"}
               = card
+
       %ul
         %li Wins: #{@small_entries[:last_win_id].wins || 0}
         %li Loses: #{@small_entries[:last_win_id].loses || 0}
         %li Draws: #{@small_entries[:last_win_id].draws || 0}
 
-    .third
-      %a{href: "/entries/#{@small_entries[:last_lose_id].id}", class: 'cf'}
-        .entry
-          %h2 Not your choice
-          .black-card
-            = @small_entries[:last_lose_id].black_card
-          - @small_entries[:last_lose_id].white_cards.each do |card|
-            .white-card
+    .entry.cf
+      %a{href: "/entries/#{@small_entries[:last_lose_id].id}"}
+        %h2 Not your choice
+        .black-card
+          = @small_entries[:last_lose_id].black_card
+        .white-cards
+          - @small_entries[:last_lose_id].white_cards.each_with_index do |card, index|
+            .white-card{:class => "overlap-#{index}"}
               = card
       %ul
         %li Wins: #{@small_entries[:last_lose_id].wins || 0}
