@@ -1,0 +1,49 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica;
+  font-weight: normal;
+  color: black;
+}
+a {
+  color: black;
+}
+header {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 40px;
+  background-color: black;
+  color: white;
+
+  .wrapper {
+    position: relative;
+    width: 1000px;
+  }
+  a {
+    color: white;
+  }
+  h1 {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 4.3em;
+    line-height: .92em;
+    margin-top: .67em;
+  }
+  nav {
+    position: absolute;
+    left: 500px;
+    top: 35px;
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+    ul li {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 6px;
+    }
+  }
+}
+.wrapper {
+  margin: 0 auto;
+  width: 900px;
+}

@@ -2,160 +2,49 @@
 // Place all the styles related to the Entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-  font-family: 'Helvetica Neue', Helvetica;
-  font-variant: light;
-}
-a {
-  color: black;
-}
-header {
-  padding: 0;
-  margin: 0;
-  margin-bottom: 40px;
-  background-color: black;
-  color: white;
-
+#entries {
   .wrapper {
-    position: relative;
+    width: 1300px;
+  }
+  header .wrapper {
     width: 1000px;
   }
-  a {
-    color: white;
-  }
-  h1 {
-    display: inline-block;
-    font-weight: 500;
-    font-size: 4.3em;
-    line-height: .92em;
-    margin-top: .67em;
-  }
-  nav {
-    position: absolute;
-    left: 500px;
-    top: 35px;
-
-    ul {
-      padding-left: 0;
-      list-style: none;
-    }
-    ul li {
-      font-weight: bold;
-      font-size: 1.2em;
-      margin-bottom: 6px;
-    }
-  }
-}
-.wrapper {
-  margin: 0 auto;
-  width: 900px;
-}
-#home_page .wrapper {
-  width: 1300px;
-}
-.vs {
-  float: left;
-
-  margin: 30px;
-
-  text-align: center;
-  font-weight: bold;
-  font-size: 2em;
-
-  i.icon-refresh {
-    text-decoration: none;
-  }
-}
-.entries {
-  margin-bottom: 24px;
-}
-.entry {
-  float: left;
-}
-.white-cards {
-  float: left;
-  position: relative;
-
-  .overlap-0 {
-    position: relative;
-    top: 0px;
-    left: 0px;
-  }
-  .overlap-1 {
-    position: absolute;
-    top: 60px;
-    left: 40px;
-  }
-  .overlap-2 {
-    position: absolute;
-    top: 120px;
-    left: 80px;
-  }
-}
-.white-card, .black-card {
-  position: relative;
-  float: left;
-
-  width: 220px;
-  height: 320px;
-  border-radius: 12px;
-
-  padding: 24px;
-  margin: 6px;
-
-  font-weight: bold;
-  font-size: 1.3em;
-
-  .icon {
-    display: block;
-    position: absolute;
-    bottom: -12px;
-
-    width: 250px;
-    height: 47px;
-
-    padding-left: 71px;
-    padding-top: 24px;
-
-    font-size: .6em;
-    vertical-align: baseline;
-  }
-}
-.white-card {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-
-  .icon {
-    background: transparent url('/assets/white-icon.png') no-repeat;
-  }
-}
-.black-card {
-  color: white;
-  background-color: black;
-
-  .icon {
-    background: transparent url('/assets/black-icon.png') no-repeat;
-  }
-}
-.small-entries {
-  margin-top: 60px;
-
-  .entry {
-    margin-right: 50px;
-  }
-  .white-cards {
-    position: relative;
+  .vs {
     float: left;
 
+    margin: 30px;
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+
+    i.icon-refresh {
+      text-decoration: none;
+    }
+  }
+  .entries {
+    margin-bottom: 24px;
+  }
+  .entry {
+    float: left;
+  }
+  .white-cards {
+    float: left;
+    position: relative;
+
+    .overlap-0 {
+      position: relative;
+      top: 0px;
+      left: 0px;
+    }
     .overlap-1 {
       position: absolute;
-      top: 40px;
+      top: 60px;
       left: 40px;
     }
     .overlap-2 {
       position: absolute;
-      top: 80px;
+      top: 120px;
       left: 80px;
     }
   }
@@ -163,28 +52,90 @@ header {
     position: relative;
     float: left;
 
-    width: 144px;
-    height: 190px;
-    border-radius: 6px;
-    padding: 12px;
-    margin: 3px;
-    font-size: .8em;
+    width: 220px;
+    height: 320px;
+    border-radius: 12px;
+
+    padding: 24px;
+    margin: 6px;
+
+    font-weight: bold;
+    font-size: 1.3em;
+
+    .icon {
+      display: block;
+      position: absolute;
+      bottom: -12px;
+
+      width: 250px;
+      height: 47px;
+
+      padding-left: 71px;
+      padding-top: 24px;
+
+      font-size: .6em;
+      vertical-align: baseline;
+    }
   }
-  h2 {
-    margin-bottom: 6px;
+  .white-card {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+
+    .icon {
+      background: transparent url('/assets/white-icon.png') no-repeat;
+    }
   }
-  ul {
-    margin-top: 8px;
-    padding-left: 3px;
+  .black-card {
+    color: white;
+    background-color: black;
+
+    .icon {
+      background: transparent url('/assets/black-icon.png') no-repeat;
+    }
   }
-  ul li {
-    display: inline-block;
-    list-style: none;
+  .small-entries {
+    margin-top: 60px;
+
+    .entry {
+      margin-right: 50px;
+    }
+    .white-cards {
+      position: relative;
+      float: left;
+
+      .overlap-1 {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+      }
+      .overlap-2 {
+        position: absolute;
+        top: 80px;
+        left: 80px;
+      }
+    }
+    .white-card, .black-card {
+      position: relative;
+      float: left;
+
+      width: 144px;
+      height: 190px;
+      border-radius: 6px;
+      padding: 12px;
+      margin: 3px;
+      font-size: .8em;
+    }
+    h2 {
+      margin-bottom: 6px;
+    }
+    ul {
+      margin-top: 8px;
+      padding-left: 3px;
+    }
+    ul li {
+      display: inline-block;
+      list-style: none;
+    }
   }
-}
-#about_page img {
-  width: 300px;
-  float: left;
-  padding-right: 40px;
-  padding-bottom: 20px;
 }
