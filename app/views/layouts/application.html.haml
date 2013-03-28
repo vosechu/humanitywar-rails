@@ -8,19 +8,20 @@
   %body{:id => @body_id}
     %header.cf
       .wrapper
-        %h1
-          Cards
-          %br
-          Against
-          %br
-          Humanity
-          %br
-          War
+        %a{href: entries_path}
+          %h1
+            Cards
+            %br
+            Against
+            %br
+            Humanity
+            %br
+            War
 
         %nav
           %ul
             %li
-              %a{href: root_path} Home
+              %a{href: entries_path} Home
             %li
               %a{href: winning_entries_path} Winningest
             %li

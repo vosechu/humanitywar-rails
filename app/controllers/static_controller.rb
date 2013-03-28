@@ -10,4 +10,8 @@ class StaticController < ApplicationController
     @body_id = "about_page"
     generic
   end
+
+  def age_gate
+    render :nothing => true, :layout => "age_gate"
+  end
 end

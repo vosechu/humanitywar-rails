@@ -13,5 +13,5 @@ HumanitywarRails::Application.routes.draw do
     end
   end
 
-  root :to => 'entries#index'
+  root :to => 'static#age_gate'
 end
