@@ -13,6 +13,7 @@
  *= require global
  *= require fontawesome
  *= require fontawesome-ie7
+ *= require chosen
  *= require_tree .
  */
 

@@ -25,6 +25,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'chosen-rails'
+gem 'simple_form'
 gem 'haml-rails', '~> 0.4.0'
 gem 'jquery-rails'
 gem 'will_paginate', '~> 3.0'
