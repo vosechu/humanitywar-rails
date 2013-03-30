@@ -116,5 +116,6 @@ class EntriesController < ApplicationController
         :last_lose_id => Entry.find(session[:last_lose_id])
       }
     end
+  rescue
   end
 end
