@@ -1,6 +1,4 @@
 HumanitywarRails::Application.routes.draw do
-  resources :playas
-
   match 'static/:action', :controller => "static"
 
   resources :entries, :only => [:new, :create, :index, :show] do
