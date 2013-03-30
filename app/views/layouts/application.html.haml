@@ -31,12 +31,12 @@
             %li
               %a{href: new_entry_path} Submit
             %li
-              - if params[:easy_mode] == "false"
-                %a{href: '?easy_mode=true', class: 'easy-mode'} Easy mode
-                (is off)
-              - else
+              - if params[:easy_mode] == "true"
                 %a{href: '?easy_mode=false', class: 'easy-mode'} Easy mode
                 (is on)
+              - else
+                %a{href: '?easy_mode=true', class: 'easy-mode'} Easy mode
+                (is off)
             %li
               %a{href: '/static/about'} About Us
 
