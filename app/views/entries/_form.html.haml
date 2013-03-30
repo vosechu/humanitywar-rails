@@ -7,16 +7,8 @@
         - @entry.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-<<<<<<< HEAD
-    = f.association :black_card, :input_html => { class: 'chzn-select' }
-  %br
-    = f.association :white_cards, :input_html => { class: 'chzn-select' }
-=======
-    = f.association :black_card
-  %br
-    = f.association :white_cards
->>>>>>> newentry2
+  = f.association :black_card, :input_html => { class: 'chzn-select' }
+  = f.association :white_cards, :input_html => { class: 'chzn-select' }
   .actions
     = f.submit 'Save'
 

@@ -47,3 +47,23 @@ header {
   margin: 0 auto;
   width: 900px;
 }
+
+// Error styles ===================================================== //
+#error_explanation {
+  color: red;
+}
+.input {
+  margin-bottom: 1em;
+  label {
+    display: block;
+    padding-bottom: 6px;
+  }
+}
+.input.field_with_errors {
+  color: red;
+  border: 2px solid red;
+  padding: 5px;
+  .error {
+    display: block;
+  }
+}
