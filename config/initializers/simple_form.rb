@@ -1,0 +1,1 @@
+SimpleForm.browser_validations = false # default is true
