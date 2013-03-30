@@ -29,14 +29,14 @@
             %li
               %a{href: newest_entries_path} Newest
             %li
-              =link_to "Submit", new_entry_path
+              %a{href: new_entry_path} Submit
             %li
-              - if params[:easy_mode] != "true"
+              - if params[:easy_mode] == "false"
                 %a{href: '?easy_mode=true', class: 'easy-mode'} Easy mode
-                (off)
+                (is off)
               - else
                 %a{href: '?easy_mode=false', class: 'easy-mode'} Easy mode
-                (on)
+                (is on)
             %li
               %a{href: '/static/about'} About Us
 
