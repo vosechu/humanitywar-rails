@@ -1,4 +1,4 @@
-= form_for @playa do |f|
+= simple_form_for @playa do |f|
   - if @playa.errors.any?
     #error_explanation
       %h2= "#{pluralize(@playa.errors.count, "error")} prohibited this playa from being saved:"

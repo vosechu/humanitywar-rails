@@ -3,7 +3,7 @@ HumanitywarRails::Application.routes.draw do
 
   match 'static/:action', :controller => "static"
 
-  resources :entries, :only => [:index, :show] do
+  resources :entries, :only => [:new, :create, :index, :show] do
     collection do
       get 'winning'
       get 'losing'

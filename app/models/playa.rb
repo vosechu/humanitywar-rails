@@ -3,6 +3,6 @@ class Playa < ActiveRecord::Base
   has_many :entries
 
   def to_s
-    @email
+    self.email
   end
 end

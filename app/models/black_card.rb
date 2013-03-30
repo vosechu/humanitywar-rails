@@ -4,6 +4,7 @@ class BlackCard < ActiveRecord::Base
 
   scope :used, joins(:entries)
   scope :random, order("random()")
+  scope :all_non_multi, BlackCard.where(:blanks => 1)
 
   def to_s
     self.text

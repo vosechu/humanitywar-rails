@@ -29,7 +29,7 @@
             %li
               %a{href: newest_entries_path} Newest
             %li
-              %a{href: '#'} Submit
+              =link_to "Submit", new_entry_path
             %li
               - if params[:easy_mode] != "true"
                 %a{href: '?easy_mode=true', class: 'easy-mode'} Easy mode

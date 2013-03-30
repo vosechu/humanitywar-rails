@@ -2,7 +2,7 @@ class Entry < ActiveRecord::Base
   belongs_to :playa
   has_and_belongs_to_many :white_cards
   belongs_to :black_card
-  attr_accessible :draws, :loses, :wins
+  attr_accessible :draws, :loses, :wins, :white_card_ids, :black_card_id, :playa_id
 
   default_scope includes(:black_card, :white_cards, :playa)
 

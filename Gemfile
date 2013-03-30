@@ -12,7 +12,6 @@ group :development do
   gem 'sqlite3'
 end
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -25,7 +24,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+<<<<<<< HEAD
 gem 'chosen-rails'
+=======
+>>>>>>> newentry2
 gem 'simple_form'
 gem 'haml-rails', '~> 0.4.0'
 gem 'jquery-rails'
@@ -56,3 +58,5 @@ group :development, :test do
   gem 'rb-fsevent'
   gem 'guard-livereload'
 end
+
+
