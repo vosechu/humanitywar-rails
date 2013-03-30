@@ -637,7 +637,6 @@ WhiteCard.create!(:text => "World peace.")
 WhiteCard.create!(:text => "Yeast.")
 WhiteCard.create!(:text => "YOU MUST CONSTRUCT ADDITIONAL PYLONS.")
 WhiteCard.create!(:text => "Zeus's sexual appetites.")
-
 WhiteCard.create!(:text => "Silence.")
 WhiteCard.create!(:text => "Oncoming traffic.")
 WhiteCard.create!(:text => "Consensual sex.")
