@@ -673,7 +673,7 @@ BlackCard.create!(:text => "You haven't truly lived until you've experienced ___
 BlackCard.create!(:text => "A romantic candlelit dinner would be incomplete without ________.", :blanks => 1)
 BlackCard.create!(:text => "After blacking out during New Year's Eve, I was awoken by ________.", :blanks => 1)
 BlackCard.create!(:text => "After months of debate, the Occupy Wall Street General Assembly could only agree on “More ________!”", :blanks => 1)
-BlackCard.create!(:text => "After the earthquake, Sean Penn bought ________ to the people of Haiti.", :blanks => 1)
+BlackCard.create!(:text => "After the earthquake, Sean Penn brought ________ to the people of Haiti.", :blanks => 1)
 BlackCard.create!(:text => "Alternative medicine is now embracing the curative powers of ________.", :blanks => 1)
 BlackCard.create!(:text => "And I would have gotten away with it, too, if it hadn't been for ________.", :blanks => 1)
 BlackCard.create!(:text => "Anthropologists have recently discovered a primitive tribe that worships ________.", :blanks => 1)
@@ -782,7 +782,7 @@ BlackCard.create!(:text => "Why am I sticky? ________", :blanks => 1)
 BlackCard.create!(:text => "Why can't I sleep at night? ________", :blanks => 1)
 BlackCard.create!(:text => "Why do I hurt all over? ________", :blanks => 1)
 
-p = Playa.create!(:email => 'blank@example.com')
+p = Playa.create!()
 
 # p = Playa.first
 b_length = BlackCard.count

@@ -11,6 +11,9 @@ class Entry < ActiveRecord::Base
   scope :losingest, order("loses DESC")
   scope :newest, order("created_at DESC")
 
+  validates :white_cards, :black_card, :playa, :presence => true
+  validate :white_cards_correct_length
+
   def self.easy_game
     b = BlackCard.used.sample
     g = self.game.where(:black_card_id => b.id)
@@ -19,5 +22,11 @@ class Entry < ActiveRecord::Base
   end
 
   self.per_page = 10
+
+  def white_cards_correct_length
+    if self.black_card.blanks.to_i != self.white_cards.length
+      errors.add(:white_cards, "has to match the number of blanks on the black card")
+    end
+  end
 
 end
