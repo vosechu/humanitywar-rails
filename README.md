@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/portlandcodeschool/humanitywar-rails.png)](https://codeclimate.com/github/portlandcodeschool/humanitywar-rails)
+
 # Humanity War
 
 What happens when you cross Cards Against Humanity with Kittenwar?
