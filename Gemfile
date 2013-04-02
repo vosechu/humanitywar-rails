@@ -7,6 +7,7 @@ gem 'rails', '3.2.12'
 
 group :production do
   gem 'pg'
+  gem 'rack-google-analytics', :require => 'rack/google-analytics'
 end
 group :development do
   gem 'sqlite3'
