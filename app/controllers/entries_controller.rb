@@ -64,10 +64,16 @@ class EntriesController < ApplicationController
 
   #POST /entries/create
   def create
-    @entry = Entry.new(params[:entry].merge(:playa_id => 1))
+    @entry = Entry.create(params[:entry].merge(:playa_id => 1))
+
+    # Update the m2m table with the order of cards. These will already exist
+    # but they'll have a default order of 0
+    if @entry.errors.empty?
+      @entry.order_white_cards(params[:entry][:white_card_ids])
+    end
 
     respond_to do |format|
-      if @entry.save
+      if @entry.errors.empty?
         format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
         format.json { render json: @entry, status: :created, location: @entry }
       else
