@@ -55,6 +55,8 @@ group :development, :test do
   gem 'rack-livereload'
   gem 'rb-fsevent'
   gem 'guard-livereload'
+
+  gem 'debugger'
 end
 
 

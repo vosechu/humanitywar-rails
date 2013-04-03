@@ -8,7 +8,12 @@
           %li= msg
 
   = f.association :black_card, :input_html => { class: 'chzn-select' }
-  = f.association :white_cards, :input_html => { class: 'chzn-select' }
+
+  .input.select.required.entry_white_cards
+    = f.label :white_cards
+    = select_tag "entry[white_card_ids][]", options_from_collection_for_select(WhiteCard.all, 'id', 'text', (@entry.white_cards[0] ? @entry.white_cards[0].id : nil)), :include_blank => true, id: 'entry_white_card_ids_0', class: 'chzn-select'
+    = select_tag "entry[white_card_ids][]", options_from_collection_for_select(WhiteCard.all, 'id', 'text', (@entry.white_cards[1] ? @entry.white_cards[1].id : nil)), :include_blank => true, id: 'entry_white_card_ids_1', class: 'chzn-select'
+    = select_tag "entry[white_card_ids][]", options_from_collection_for_select(WhiteCard.all, 'id', 'text', (@entry.white_cards[2] ? @entry.white_cards[2].id : nil)), :include_blank => true, id: 'entry_white_card_ids_2', class: 'chzn-select'
   .actions
     = f.submit 'Save'
 

@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20130320181058) do
   create_table "entries_white_cards", :force => true do |t|
     t.integer "entry_id"
     t.integer "white_card_id"
-    t.integer "order",         :default => 0
+    t.integer "weight",         :default => 0
   end
 
   create_table "playas", :force => true do |t|
