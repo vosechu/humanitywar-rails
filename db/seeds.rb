@@ -642,9 +642,6 @@ WhiteCard.create!(:text => "Oncoming traffic.")
 WhiteCard.create!(:text => "Consensual sex.")
 WhiteCard.create!(:text => "Shiney objects.")
 WhiteCard.create!(:text => "The penny whistle solo from “My Heart Will Go On”")
-WhiteCard.create!(:text => "")
-WhiteCard.create!(:text => "")
-WhiteCard.create!(:text => "")
 
 
 BlackCard.create!(:text => "________, kid-tested mother-approved.", :blanks => 1)
@@ -742,7 +739,7 @@ BlackCard.create!(:text => "This holiday season, Tim Allen must overcome his fea
 BlackCard.create!(:text => "This is the way the world ends Not with a bang but with ________.", :blanks => 1)
 BlackCard.create!(:text => "This is your captain speaking. Fasten your seatbelts and prepare for ________.", :blanks => 1)
 BlackCard.create!(:text => "This month's Cosmo: “Spice up your sex life by bringing ________ into the bedroom.”", :blanks => 1)
-BlackCard.create!(:text => "This reason on Man vs. Wild, Bear Grylls must survive in the depths of the Amazon with only ________ and his wits.", :blanks => 1)
+BlackCard.create!(:text => "This season on Man vs. Wild, Bear Grylls must survive in the depths of the Amazon with only ________ and his wits.", :blanks => 1)
 BlackCard.create!(:text => "Tonight on 20/20: What you don't know about ________ could kill you.", :blanks => 1)
 BlackCard.create!(:text => "TSA guidelines now prohibit ________ on airplanes.", :blanks => 1)
 BlackCard.create!(:text => "Wake up, America. Christmas is under attack by secular liberals and their ________.", :blanks => 1)
