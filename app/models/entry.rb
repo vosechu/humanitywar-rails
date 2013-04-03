@@ -33,7 +33,7 @@ class Entry < ActiveRecord::Base
   def order_white_cards(ids)
     ids.reject(&:blank?).each_with_index do |card_id, index|
       card = self.entries_white_cards.where(:white_card_id => card_id).first
-      card.update_attributes({:order => index})
+      card.update_attributes({:weight => index})
     end
   end
 
