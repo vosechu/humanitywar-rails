@@ -1,0 +1,43 @@
+body {
+font-family: 'Helvetica Neue', Helvetica;
+font-weight: normal;
+background: black;
+color: #fff;
+}
+header {
+padding: 0;
+margin: 0;
+margin-bottom: 40px;
+background-color: black;
+color: white;
+}
+.wrapper {
+  margin: 0 auto;
+  width: 1000px;
+}
+h1 {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 4.3em;
+  line-height: .92em;
+  margin-top: .67em;
+}
+h2 {
+  font-weight: 500;
+  font-size: 2.2em;
+  color: #666;
+}
+h3 {
+  font-weight: 500;
+  font-size: 1.3em;
+  color: #666;
+}
+nav {
+  position: absolute;
+  left: 500px;
+  top: 35px;
+}
+
+#error_explanation {
+color: red;
+}
