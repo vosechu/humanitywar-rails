@@ -792,7 +792,7 @@ p = Playa.create!(:email => 'blank@example.com')
 # p = Playa.first
 b_length = BlackCard.count
 w_length = WhiteCard.count
-3000.times do |i|
+100.times do |i|
   e = Entry.new
   e.playa_id = p.id
   e.black_card_id = rand(b_length) + 1

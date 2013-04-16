@@ -22,7 +22,7 @@ class Entry < ActiveRecord::Base
     return self.easy_game # Evil recursion
   end
 
-  self.per_page = 10
+  self.per_page = 5
 
   def white_cards_correct_length
     if self.black_card.blanks.to_i != self.white_cards.length

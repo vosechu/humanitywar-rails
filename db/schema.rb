@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130320181058) do
+ActiveRecord::Schema.define(:version => 20130403224052) do
 
   create_table "black_cards", :force => true do |t|
     t.string   "text"
@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(:version => 20130320181058) do
     t.integer  "wins"
     t.integer  "loses"
     t.integer  "draws"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.boolean  "notsafe",       :default => true
   end
 
   add_index "entries", ["black_card_id"], :name => "index_entries_on_black_card_id"
@@ -36,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20130320181058) do
   create_table "entries_white_cards", :force => true do |t|
     t.integer "entry_id"
     t.integer "white_card_id"
-    t.integer "weight",         :default => 0
+    t.integer "weight",        :default => 0
   end
 
   create_table "playas", :force => true do |t|
